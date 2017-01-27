@@ -95,6 +95,12 @@ bool HttpClient_ESP8266_AT::disconnectAP() {
     return checkATResponse();
 }
 
+bool HttpClient_ESP8266_AT::deepSleep() {
+    rxClear();
+    m_serial->println(F("AT+GSLP=0"));
+    return checkATResponse();
+}
+
 uint8_t HttpClient_ESP8266_AT::ipStatus() {
     String buf;
     rxClear();

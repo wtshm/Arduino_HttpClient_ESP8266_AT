@@ -38,6 +38,8 @@ class HttpClient_ESP8266_AT
     bool connectAP(const String& ssid, const String& password);
     bool disconnectAP();
 
+    bool deepSleep();
+
  private:
     // Clear rx buffer
     void rxClear();
